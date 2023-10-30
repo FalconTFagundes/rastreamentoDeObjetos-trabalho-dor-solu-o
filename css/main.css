@@ -217,14 +217,14 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #adadad;
+  border-bottom: 2px solid #ffffff;
   margin-bottom: 37px;
 }
 
 .input100 {
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: #555555;
+  color: #ffffff;
   line-height: 1.2;
 
   display: block;

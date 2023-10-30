@@ -42,13 +42,13 @@
 <body>
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="wrap-login100" style="background-color: black;">
 				<form class="loginIndex" method="POST" name="frmLogin" id="frmLogin" action="#">
 					<div class="text-center">
 						<img src="images/logoLogin.png" class="rounded" alt="Logo tela de login Setor">
 					</div>
 
-					<div class="wrap-input100">
+					<div class="wrap-input100" >
 						<input class="input100" type="text" name="usuario" required>
 						<span class="focus-input100" data-placeholder="Usuário"></span>
 					</div>

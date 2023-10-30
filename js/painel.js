@@ -22,7 +22,6 @@ $(document).ready(function () {
                   timerProgressBar: false,
                   didOpen: () => {
                     Swal.showLoading()
-                    co 
                     timerInterval = setInterval(() => {
                       b.textContent = Swal.getTimerLeft()
                     }, 100)
@@ -43,7 +42,7 @@ $(document).ready(function () {
                             timer: 2000
                         });
                         setTimeout(() => {
-                            window.location.href = "dashboard/adm.php"; /* redirecionando para a página de adm */
+                            window.location.href = "painel/loginPainel.php"; /* redirecionando para a página de adm */
                         }, "1000");
 
                     } else { /* se for vazio */
