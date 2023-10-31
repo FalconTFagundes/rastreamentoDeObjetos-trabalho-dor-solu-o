@@ -54,7 +54,7 @@ $(document).ready(function () {
                             timer: 1000
                         });
                     }
-                }, "500"); /* tempo da function de verificação - por causa da msg de aguarde */
+                }, "350"); /* tempo da function de verificação - por causa da msg de aguarde */
 
 
             }
@@ -62,6 +62,19 @@ $(document).ready(function () {
     });
 });
 /* FIM BTN LOGIN */
+
+
+/* FUNÇÃO DE ALERTA DE MENSAGEM */
+function msgGeral(mensagem, timer) {
+    Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: mensagem,
+        showConfirmButton: false,
+        timer: timer
+    })
+}
+/* FINAL FUNÇÃO DE ALERTA DE MENSAGEM */
 
 
 
@@ -105,19 +118,9 @@ $(document).ready(function () {
 
 
 
-/* FUNÇÃO DE ALERTA DE MENSAGEM */
-function msgGeral(mensagem, timer) {
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: mensagem,
-        showConfirmButton: false,
-        timer: timer
-    })
-}
-/* FINAL FUNÇÃO DE ALERTA DE MENSAGEM */
 
 
+/* 
 function atualizarPagina(dataMenu) {
     var dados = {
         acao: dataMenu
@@ -134,4 +137,4 @@ function atualizarPagina(dataMenu) {
             $('div#conteudo').html(e);
         }
     })
-}
+} */
