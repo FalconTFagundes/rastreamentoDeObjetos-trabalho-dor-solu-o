@@ -7,3 +7,4 @@ switch ($acao) {
         include_once 'logar.php';
         break;
 } 
+

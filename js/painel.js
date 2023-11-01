@@ -42,7 +42,7 @@ $(document).ready(function () {
                             timer: 2000
                         });
                         setTimeout(() => {
-                            window.location.href = "painel/loginPainel.php"; /* redirecionando para a página de adm */
+                            window.location.href = "painel/controleSetor.php"; /* redirecionando para a página de adm */
                         }, "1000");
 
                     } else { /* se for vazio */
