@@ -7,10 +7,11 @@ include_once 'func/func.php';
 if (isset($_POST['usuario']) and !empty($_POST['usuario']) and isset($_POST['senha']) and !empty($_POST['senha'])) {
     $usuario = $_POST['usuario']; /* capturo salvando o usuario */
     $senha = $_POST['senha']; /* capturo salvando a senha */
+    $senhaOfc = md5($senha); /* Criptografando a senha - by Luciano */
 
-    /* CRIPTOGRAFIA DPS!! */
 
-    $retornoLista = listarDadosDoisParametro('idusuario', 'usuario', 'usuario', 'senha', "$usuario", "$senha");
+
+    $retornoLista = listarDadosDoisParametro('idusuario', 'usuario', 'usuario', 'senha', "$usuario", "$senhaOfc");
     if ($retornoLista != 'Vazio') {
         $_SESSION['usuario'] = $usuario; /* criando a sessão */
     } else {

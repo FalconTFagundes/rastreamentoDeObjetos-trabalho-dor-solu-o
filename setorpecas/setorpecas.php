@@ -108,6 +108,7 @@
             </div>
         </div>
     </div>
+    </div>
 
     <!-- MODAL DE SAÍDA -->
     <div class="modal" tabindex="-1" role="dialog" id="saidaDeMaterialPecas">
@@ -148,9 +149,6 @@
                                 <input type="text" class="form-control" id="respenvpecas" name="respenvpecas">
                             </div>
                         </div>
-
-
-
                         <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
                     </form>
                 </div>

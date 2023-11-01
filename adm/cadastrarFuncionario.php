@@ -8,8 +8,9 @@ $senhaFunc = filter_input(INPUT_POST, 'senhaFunc', FILTER_SANITIZE_STRING);
 $setorFunc = filter_input(INPUT_POST, 'setorFunc', FILTER_SANITIZE_STRING);
 
 if ($nomeFunc && $senhaFunc && $setorFunc) {
+    $senhaCriptografadaFunc = md5($senhaFunc);
     try {
-        $resultado = inserttres('usuario', 'idsetores, usuario, senha', $setorFunc, $nomeFunc, $senhaFunc);
+        $resultado = inserttres('usuario', 'idsetores, usuario, senha', $setorFunc, $nomeFunc, $senhaCriptografadaFunc);
 
         if ($resultado === "Cadastrado") {
             echo 'Funcionário cadastrado com sucesso';

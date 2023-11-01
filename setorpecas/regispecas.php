@@ -20,6 +20,7 @@ $resultado = insertquatro('pecas', 'produto, quantentregue,datarecebpecas,respre
 
 if ($resultado === "Cadastrado") {
     echo "Dados cadastrados com sucesso!";
+
 } else {
     echo "Erro ao cadastrar os dados: " . $resultado;
 }
