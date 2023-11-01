@@ -13,13 +13,7 @@ try {
         $prodcomponents = filter_input(INPUT_POST, 'prodcomponents', FILTER_SANITIZE_STRING);
         $quantentregue = filter_input(INPUT_POST, 'quantentregue', FILTER_SANITIZE_STRING);
 
-        $resultado = insertdois(
-            'components',
-            'produto, quantentregue,',
-            $prodcomponents,
-            $quantentregue,
-            
-        );
+        $resultado = insertdois('components', 'produto, quantentregue,',"$prodcomponents", "$quantentregue",);
 
 
         if ($resultado === "Cadastrado") {

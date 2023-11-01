@@ -15,8 +15,7 @@
 
 
 
-$resultado = insertquatro('pecas', 'produto, quantentregue,datarecebpecas,resprecebpecas', 
-$prodpecas, $quantprodpecas, $datarecpecas , $resprecebpecas );
+$resultado = insertquatro('pecas', 'produto, quantentregue,datarecebpecas,resprecebpecas', $prodpecas, $quantprodpecas, $datarecpecas , $resprecebpecas );
 
 
 if ($resultado === "Cadastrado") {
