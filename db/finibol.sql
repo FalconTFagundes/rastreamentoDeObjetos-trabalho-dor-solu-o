@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31/10/2023 às 02:22
+-- Tempo de geração: 01/11/2023 às 23:32
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -48,7 +48,8 @@ CREATE TABLE `almoxarife` (
 INSERT INTO `almoxarife` (`idalmoxarife`, `transportadora`, `produto`, `quantsolicitada`, `quantentregue`, `setor`, `solicitante`, `baixaprod`, `observacao`, `alteracao`, `cadastro`) VALUES
 (1, 'Transportadora 3', 'amortecedor', 1000, 97, 'Setor 1', 'tu', 0, 'vvvvc', '0000-00-00', '2023-10-29 23:25:26'),
 (2, 'Transportadora 1', 'carburador', 400, 166, 'Setor 2', 'ele', 0, 'teste', '0000-00-00', '2023-10-29 23:24:04'),
-(3, 'Transportadora 2', 'carburador', 1000, 166, 'Setor 3', 'ele', 0, 'teste', '0000-00-00', '2023-10-29 23:24:04');
+(3, 'Transportadora 2', 'carburador', 1000, 166, 'Setor 3', 'ele', 0, 'teste', '0000-00-00', '2023-10-29 23:24:04'),
+(4, 'Transportadora 1', 'carburador', 22, 4, 'Setor 1', 'Glaydmar', 0, '', '0000-00-00', '2023-11-01 22:28:11');
 
 -- --------------------------------------------------------
 
@@ -122,8 +123,9 @@ INSERT INTO `pecas` (`idpecas`, `produto`, `quantentregue`, `datarecebpecas`, `r
 (2, 'Produto 3', '19', '2023-10-20', 'tu', '0000-00-00 00:00:00'),
 (3, 'Produto 2', '79', '2023-10-31', 'tu', '0000-00-00 00:00:00'),
 (4, 'pedal do acelerador(fox-2023)', '999', '2023-10-24', 'tu', '0000-00-00 00:00:00'),
-(5, 'amortecedor', '999', '2023-10-31', 'tu', '0000-00-00 00:00:00'),
-(6, 'farol', '999', '2023-10-24', 'tu', '0000-00-00 00:00:00');
+(5, 'amortecedor', '997', '2023-10-31', 'tu', '0000-00-00 00:00:00'),
+(6, 'farol', '999', '2023-10-24', 'tu', '0000-00-00 00:00:00'),
+(7, 'amortecedor', '997', '2005-08-17', 'Rafael', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -208,7 +210,8 @@ INSERT INTO `saidapecas` (`idsaidapecas`, `prodsaidapecas`, `quantsaidapecas`, `
 (5, 'Produto 3', '1', '2023-10-30', 'eu', '', '', '2023-10-29 04:57:37'),
 (6, 'amortecedor', '1', '2023-10-24', 'eu', '', '', '2023-10-29 05:06:35'),
 (7, 'farol', '1', '2023-10-16', 'eu', '', '', '2023-10-29 05:07:22'),
-(8, 'pedal do acelerador(fox-2023)', '1', '2023-10-19', 'eu', '', '', '2023-10-29 05:08:01');
+(8, 'pedal do acelerador(fox-2023)', '1', '2023-10-19', 'eu', '', '', '2023-10-29 05:08:01'),
+(9, 'amortecedor', '2', '2005-08-17', 'Rafael Fagundes', '', '', '2023-11-01 22:05:56');
 
 -- --------------------------------------------------------
 
@@ -289,7 +292,6 @@ CREATE TABLE `usuario` (
   `idsetores` int(10) UNSIGNED NOT NULL,
   `usuario` varchar(45) NOT NULL,
   `senha` varchar(90) NOT NULL,
-  `cargo` enum('gerente','administrador') NOT NULL,
   `cadastro` datetime DEFAULT NULL,
   `ativo` char(1) NOT NULL DEFAULT 'A'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -298,9 +300,12 @@ CREATE TABLE `usuario` (
 -- Despejando dados para a tabela `usuario`
 --
 
-INSERT INTO `usuario` (`idusuario`, `idsetores`, `usuario`, `senha`, `cargo`, `cadastro`, `ativo`) VALUES
-(2, 1, 'Rafael Fagundes', 'rafaelfagundes762', 'administrador', '2023-10-25 20:49:00', 'A'),
-(3, 2, 'LCP', '123', 'gerente', NULL, 'A');
+INSERT INTO `usuario` (`idusuario`, `idsetores`, `usuario`, `senha`, `cadastro`, `ativo`) VALUES
+(2, 1, 'Rafael Fagundes', 'fa64f60d391cefff260bb534f1935546', '2023-10-25 20:49:00', 'A'),
+(3, 1, 'LCP', '202cb962ac59075b964b07152d234b70', NULL, 'A'),
+(5, 1, 'RS', '7b41bfa5085806dfa24b8c9de0ce567f', NULL, 'A'),
+(6, 3, 'Fernando', 'e8724ce58c9d6c46846fa7b4d2dc5251', NULL, 'A'),
+(7, 5, 'Luciano', '9a286406c252a3d14218228974e1f567', NULL, 'A');
 
 --
 -- Índices para tabelas despejadas
@@ -387,7 +392,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `almoxarife`
 --
 ALTER TABLE `almoxarife`
-  MODIFY `idalmoxarife` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idalmoxarife` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `components`
@@ -405,7 +410,7 @@ ALTER TABLE `expedicao`
 -- AUTO_INCREMENT de tabela `pecas`
 --
 ALTER TABLE `pecas`
-  MODIFY `idpecas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idpecas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `prodfinal`
@@ -429,7 +434,7 @@ ALTER TABLE `saidaexpedicao`
 -- AUTO_INCREMENT de tabela `saidapecas`
 --
 ALTER TABLE `saidapecas`
-  MODIFY `idsaidapecas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `idsaidapecas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `saidaprodfinal`
@@ -453,7 +458,7 @@ ALTER TABLE `setores`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idusuario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para tabelas despejadas

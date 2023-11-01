@@ -18,9 +18,9 @@ if (!empty($_SESSION['usuario']) and !empty($_SESSION['setor'])) {
     }
 
     //redirecionamento dos dois Administradores
-    if($_SESSION['usuario'] == 'Rafael Fagundes' and $_SESSION['setor'] == 1 or $_SESSION['usuario'] == 'LCP' and $_SESSION['setor'] == 1 ){
+     if($_SESSION['usuario'] == 'Rafael Fagundes' and $_SESSION['setor'] == 1 or $_SESSION['usuario'] == 'LCP' and $_SESSION['setor'] == 1 ){
         header("Location: ../adm/adm.php");
-    }
+    } 
 
 } else {
 ?>

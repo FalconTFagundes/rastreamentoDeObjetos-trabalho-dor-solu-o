@@ -28,7 +28,7 @@
     }
 
     .navbar-brand {
-      margin-right: 640px;
+      margin-right: 1200px;
     }
   </style>
 </head>

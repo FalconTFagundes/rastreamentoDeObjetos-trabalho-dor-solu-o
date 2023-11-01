@@ -30,7 +30,7 @@
 
         body::before {
             content: "";
-            background-image: url('../images/adm.png');
+            background-image: url('../images/adm.jpg');
             background-repeat: repeat;
             background-position: center;
             position: fixed;
@@ -61,14 +61,14 @@
         }
 
         .navbar-brand {
-            margin-right: 870px;
+            margin-right: 1400px;
         }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="exped.php">Área Adm</a>
+        <a class="navbar-brand" href="exped.php">ÁREA ADM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -78,7 +78,7 @@
                     <a class="nav-link" href="estoqueGeralAdm.php">Estoque Geral</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#cadastrarUsuario">Cadastrar Usuário</a>
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#cadastrarUsuario">Cadastrar Funcionário</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../painel/logout.php">Sair</a>

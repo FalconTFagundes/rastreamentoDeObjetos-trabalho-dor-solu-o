@@ -10,7 +10,6 @@ if (isset($_POST['usuario']) and !empty($_POST['usuario']) and isset($_POST['sen
     $senhaOfc = md5($senha); /* Criptografando a senha - by Luciano */
 
 
-
     $retornoLista = listarDadosDoisParametro('idusuario', 'usuario', 'usuario', 'senha', "$usuario", "$senhaOfc");
     if ($retornoLista != 'Vazio') {
         $_SESSION['usuario'] = $usuario; /* criando a sessão */

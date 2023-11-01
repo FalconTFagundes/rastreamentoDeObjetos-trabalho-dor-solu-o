@@ -29,7 +29,7 @@
         }
 
         .navbar-brand {
-            margin-right: 670px;
+            margin-right: 1300px;
         }
     </style>
 </head>
@@ -50,7 +50,7 @@
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#saidaDeMaterialPecas">Saída de Material</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="estoquepecas.php">Estoque de Peças</a>
+                    <a class="nav-link" href="estoquepecas.php">Estoque</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../painel/logout.php">Sair</a>

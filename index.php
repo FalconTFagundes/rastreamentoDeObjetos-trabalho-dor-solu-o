@@ -63,11 +63,7 @@
 							<div class="login100-form-bgbtn"></div>
 							<button type="submit" class="btnLogin" name="btnLogin">Login</button>
 						</div>
-						<?php 
-						/* 
-						CRIPTOGRAFAR SENHA
-						echo md5('luciano'); */
-						?>
+
 					</div>
 				</form>
 			</div>
