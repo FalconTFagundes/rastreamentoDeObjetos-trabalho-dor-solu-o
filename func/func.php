@@ -139,6 +139,22 @@ function insertdois($tabela, $camposTabela, $valor1, $valor2)
     }
 }
 
+
+function inserttres($table, $columns, $value1, $value2, $value3) {
+    $conn = conectar(); // Conecte-se ao banco de dados aqui
+
+    $sql = "INSERT INTO $table ($columns) VALUES (?, ?, ?)";
+
+    try {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$value1, $value2, $value3]);
+        return "Cadastrado";
+    } catch (PDOException $e) {
+        return "Erro ao cadastrar: " . $e->getMessage();
+    }
+}
+
+
 function insertquatro($tabela, $camposTabela, $valor1, $valor2, $value3, $value4)
 {
 

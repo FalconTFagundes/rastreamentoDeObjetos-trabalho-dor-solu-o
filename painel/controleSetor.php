@@ -16,6 +16,12 @@ if (!empty($_SESSION['usuario']) and !empty($_SESSION['setor'])) {
     } else if ($_SESSION['setor'] == 5){
         header("Location: ../expedicao/exped.php");
     }
+
+    //redirecionamento dos dois Administradores
+    if($_SESSION['usuario'] == 'Rafael Fagundes' and $_SESSION['setor'] == 1 or $_SESSION['usuario'] == 'LCP' and $_SESSION['setor'] == 1 ){
+        header("Location: ../adm/adm.php");
+    }
+
 } else {
 ?>
     <meta http-equiv="refresh" content="1;url=../index.php">

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Barra de Navegação Vertical</title>
+    <title>Painel Administrador</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Seu CSS */
@@ -30,7 +30,7 @@
 
         body::before {
             content: "";
-            background-image: url('../img/th.jpg');
+            background-image: url('../images/adm.png');
             background-repeat: repeat;
             background-position: center;
             position: fixed;
@@ -50,97 +50,91 @@
             right: 10px;
             z-index: 999;
         }
-        .frametable{
+
+        .frametable {
             max-width: 900px;
-            
+
         }
-       
+
+        .navbar-nav .nav-item .nav-link {
+            margin-right: 20px;
+        }
+
+        .navbar-brand {
+            margin-right: 870px;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary p-4">
-        <ul class="navbar-nav mx-auto">
-            <li class="nav-item active mx-3">
-                <a class="nav-link text-white" href="conteudo1.html" target="conteudoIframe" onclick="abrirIframe()">Conteúdo 1</a>
-            </li>
-            <li class="nav-item active mx-3">
-                <a class="nav-link text-white" href="conteudo2.html" target="conteudoIframe" onclick="abrirIframe()">Conteúdo 2</a>
-            </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="exped.php">Área Adm</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="estoqueGeralAdm.php">Estoque Geral</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#cadastrarUsuario">Cadastrar Usuário</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../painel/logout.php">Sair</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <div class="container-fluid">
-        <div class="row">
-            <nav class="col-md-2 d-none d-md-block bg-info sidebar">
 
-            <a class="navbar-brand mt-3 mx-4" href="../index.php">
-                        <img src="../img/th.jpg" width="150" height="70px" class="d-inline-block " alt="" loading="lazy">
-                    </a>
 
-            <ul class="nav flex-column mt-3 ">
-                        <button class="btn btn-secondary dropdown-toggle mx-auto " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Botão dropdown
-                        </button>
-                        <div class="dropdown-menu bg-info  " aria-labelledby="dropdownMenuButton">
-                        
-                        <a class="nav-link text-white"href="../adm/estokgeraladm.php" target="conteudoIframe" onclick="abrirIframe()">Estoque geral</a>
-            </li>
-                            <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal" tabindex="-1" role="dialog" id="cadastrarUsuario">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: black;">
+                    <h5 class="modal-title" style=" color: white;">Cadastrar Funcionário</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="border border-dark p-3 mx-auto bg-white" action="cadastrarFuncionario.php" method="post">
+                        <div class="form-group">
+                            <label for="nomeFunc">Digite o Nome de Acesso do Funcionário</label>
+                            <input type="text" class="form-control" id="nomeFunc" name="nomeFunc" placeholder="Nome">
+                            <small id="nomeFunc" class="form-text text-muted">Evite utilizar apelidos, estamos em um ambiente formal.</small>
                         </div>
-            </nav>
+                        <div class="form-group">
+                            <label for="senhaFunc">Informe o Setor de Atuação do Funcionário</label>
+                            <div class="form-group">
+                                <select name="setorFunc">
+                                    <option select value="1">Almoxarifado</option>
+                                    <option value="2">Setor de Peças</option>
+                                    <option value="3">Setor de Componentes</option>
+                                    <option value="4">Setor de Produtos Finais</option>
+                                    <option value="5">Expedição</option>
+                                </select>
+                            </div>
+                           
+                        </div>
+                        <div class="form-group">
+                            <label for="senhaFunc">Digite a Senha de Acesso do Funcionário</label>
+                            <input type="password" class="form-control" id="senhaFunc" name="senhaFunc" placeholder="Senha">
+                        </div>
 
-            <main role="main" class="col-md-4 ml-sm-auto col-lg-10 px-4 frametable">
-            <iframe name="conteudoIframe" id="conteudoIframe" class="w-50 mt-5" style="border: none;"></iframe>
-
-                <button id="fecharIframe" onclick="fecharIframe()">Fechar</button>
-            </main>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary btn-block">Cadastrar Novo Funcionário</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        function abrirIframe() {
-            document.getElementById('conteudoIframe').style.display = 'block';
-            document.getElementById('fecharIframe').style.display = 'block';
-        }
-
-        function fecharIframe() {
-            document.getElementById('conteudoIframe').setAttribute('src', '');
-            document.getElementById('conteudoIframe').style.display = 'none';
-            document.getElementById('fecharIframe').style.display = 'none';
-        }
-
-        window.addEventListener('message', function (event) {
-            if (event.data === 'fecharIframe') {
-                fecharIframe();
-            }
-        });
-       
-    window.onload = function() {
-        // Obter o elemento desejado e o iframe
-        var elemento = document.querySelector('.frametable');
-        var iframe = document.getElementById('conteudoIframe');
-
-        // Obter a altura do elemento desejado
-        var alturaElemento = elemento.offsetHeight;
-
-        // Aplicar a altura do elemento desejado ao iframe
-        iframe.style.height = alturaElemento + 'px';
-    };
-
-  
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 
 </html>
-

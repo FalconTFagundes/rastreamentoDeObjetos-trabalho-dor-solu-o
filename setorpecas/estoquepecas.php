@@ -29,7 +29,7 @@ try {
         }
     }
 
-    // List products and quantities in the table
+
     $produto_count = listarProdutosEQuantidades($conn, 'pecas');
 ?>
 
