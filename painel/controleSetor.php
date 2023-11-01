@@ -10,11 +10,11 @@ if (!empty($_SESSION['usuario']) and !empty($_SESSION['setor'])) {
     } else if ($_SESSION['setor'] == 2) {
         header("Location: ../setorpecas/setorpecas.php");
     } else if ($_SESSION['setor'] == 3){
-        header("Location: ../setorcomponents/setorcomponents.php");
+        header("Location: ../setorcomponentes/setorcomponents.php");
     } else if ($_SESSION['setor'] == 4){
         header("Location: ../produtofinalizado/setorprodfinal.php");
     } else if ($_SESSION['setor'] == 5){
-        header("Location: expedicao/exped.php");
+        header("Location: ../expedicao/exped.php");
     }
 } else {
 ?>

@@ -35,29 +35,27 @@ try {
     // List products and quantities in the table
     $produto_count = listarProdutosEQuantidades($conn, 'prodfinal');
 ?>
-   <div class="border border-dark border-5 bg-secondary w-75 mx-auto p-1 mt-3">
-    <h2 class="text-center  text-white ">Estoque produto final</h2>
-    <table class="table table-bordered  mx-auto text-center bg-white">
-        <thead>
-            <tr>
-                <th scope="col">Produto</th>
-                <th scope="col">Quantidade</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            foreach ($produto_count as $produto => $quantidade) {
-            ?>
+    <br><br>
+    <div class="container-fluid">
+        <table class="table table-striped table-dark">
+            <thead>
                 <tr>
-                    <td><?php echo $produto; ?></td>
-                    <td><?php echo $quantidade; ?></td>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Quantidade</th>
                 </tr>
-            <?php
-            }
-            ?>
-        </tbody>
-    </table>
-<div></div>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($produto_count as $produto => $quantidade) {
+                ?>
+                    <tr>
+                        <td><?php echo $produto; ?></td>
+                        <td><?php echo $quantidade; ?></td>
+                    <?php } ?>
+            </tbody>
+        </table>
+
+    </div>
 <?php
 } catch (PDOException $e) {
     echo "Erro ao conectar ao banco de dados: " . $e->getMessage();

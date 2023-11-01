@@ -2,31 +2,13 @@
 include_once '../config/conexao.php';
 include_once '../config/constantes.php';
 include_once '../func/func.php';
-include_once 'setorcomponents.php';
+include_once 'almoxarife.php';
 
 try {
-    // Establish a connection to the database using PDO
-    $conn = conectar();
-
-    // Check if the form was submitted and process the data
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $prodcomponents = filter_input(INPUT_POST, 'prodcomponents', FILTER_SANITIZE_STRING);
-        $quantentregue = filter_input(INPUT_POST, 'quantentregue', FILTER_SANITIZE_STRING);
-
-        $resultado = insertdois('components', 'produto, quantentregue,',"$prodcomponents", "$quantentregue",);
-
-
-        if ($resultado === "Cadastrado") {
-            echo "Dados cadastrados com sucesso!";
-        } else {
-            echo "Erro ao cadastrar os dados: " . $resultado;
-        }
-    }
-
-    // List products and quantities in the table
-    $produto_count = listarProdutosEQuantidades($conn, 'components');
+    $conn = conectar(); 
 ?>
-  <br><br>
+
+    <br><br>
     <div class="container-fluid">
         <table class="table table-striped table-dark">
             <thead>
@@ -37,6 +19,8 @@ try {
             </thead>
             <tbody>
                 <?php
+                $produto_count = listarProdutosEQuantidades($conn, 'almoxarife');
+
                 foreach ($produto_count as $produto => $quantidade) {
                 ?>
                     <tr>
@@ -47,6 +31,8 @@ try {
         </table>
 
     </div>
+
+
 
 <?php
 } catch (PDOException $e) {

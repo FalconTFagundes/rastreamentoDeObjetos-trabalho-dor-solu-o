@@ -28,10 +28,9 @@
             margin-right: 20px;
         }
 
-        .navbar-brand{
+        .navbar-brand {
             margin-right: 670px;
         }
-    </style>
     </style>
 </head>
 
@@ -45,10 +44,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#recebimentoDeMaterial">Recebimento de Material</a>
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#recebimentoDeMaterialPecas">Recebimento de Material</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#saidaDeMaterial">Saída de Material</a>
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#saidaDeMaterialPecas">Saída de Material</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="estoquepecas.php">Estoque de Peças</a>
@@ -60,110 +59,110 @@
         </div>
     </nav>
 
-</body>
 
-<!-- MODAL DE RECEBIMENTO -->
-<div class="modal" tabindex="-1" role="dialog" id="recebimentoDeMaterial">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: black;">
-                <h5 class="modal-title" style=" color: white;">Recebimento de Material</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+
+    <!-- MODAL DE RECEBIMENTO -->
+    <div class="modal" tabindex="-1" role="dialog" id="recebimentoDeMaterialPecas">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: black;">
+                    <h5 class="modal-title" style=" color: white;">Recebimento de Material</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="border border-dark p-3 mx-auto bg-white" action="regispecas.php" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="produto">Produto recebido</label>
+                                <select id="produto" class="form-control" name="prodpecas">
+                                    <option selected>amortecedor</option>
+                                    <option>farol</option>
+                                    <option>pedal do acelerador(fox-2023) </option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="quantidade">Quantidade recebida</label>
+                                <input type="text" class="form-control" id="quantprodpecas" name="quantprodpecas">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="quantidade">Data de recebimento</label>
+                                <input type="date" class="form-control" id="datarecpecas" name="datarecpecas">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="quantidade">Respnsável pelo recebimento</label>
+                                <input type="text" class="form-control" id="resprecebpecas" name="resprecebpecas">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </form>
+                </div>
             </div>
-            <div class="modal-body">
-                <form class="border border-dark p-3 mx-auto bg-white" action="regispecas.php" method="post">
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="produto">Produto recebido</label>
-                            <select id="produto" class="form-control" name="prodpecas">
-                                <option selected>amortecedor</option>
-                                <option>farol</option>
-                                <option>pedal do acelerador(fox-2023) </option>
-                            </select>
+        </div>
+    </div>
+
+    <!-- MODAL DE SAÍDA -->
+    <div class="modal" tabindex="-1" role="dialog" id="saidaDeMaterialPecas">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: black;">
+                    <h5 class="modal-title" style=" color: white;">Saída de Material</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="border border-dark p-3 mx-auto bg-white" action="cadsaidapecas.php" method="post">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="produto">Produto enviado</label>
+                                <select id="produto" class="form-control" name="prodsaidapecas">
+                                    <option selected>amortecedor</option>
+                                    <option>farol</option>
+                                    <option>pedal do acelerador(fox-2023)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="quantidade">Quantidade de envio</label>
+                                <input type="text" class="form-control" id="quantsaidapecas" name="quantsaidapecas">
+                            </div>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label for="quantidade">Quantidade recebida</label>
-                            <input type="text" class="form-control" id="quantprodpecas" name="quantprodpecas">
-                        </div>
-                    </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="quantidade">Data de envio</label>
+                                <input type="date" class="form-control" id="dataenvpecas" name="dataenvpecas">
+                            </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="quantidade">Data de recebimento</label>
-                            <input type="date" class="form-control" id="datarecpecas" name="datarecpecas">
+                            <div class="form-group col-md-6">
+                                <label for="quantidade">Respnsável pelo envio</label>
+                                <input type="text" class="form-control" id="respenvpecas" name="respenvpecas">
+                            </div>
                         </div>
 
-                        <div class="form-group col-md-6">
-                            <label for="quantidade">Respnsável pelo recebimento</label>
-                            <input type="text" class="form-control" id="resprecebpecas" name="resprecebpecas">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
+
+
                         <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-</div>
-
-<!-- MODAL DE SAÍDA -->
-<div class="modal" tabindex="-1" role="dialog" id="saidaDeMaterial">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color: black;">
-                <h5 class="modal-title" style=" color: white;">Saída de Material</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form class="border border-dark p-3 mx-auto bg-white" action="cadsaidapecas.php" method="post">
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="produto">Produto enviado</label>
-                            <select id="produto" class="form-control" name="prodsaidapecas">
-                                <option selected>amortecedor</option>
-                                <option>farol</option>
-                                <option>pedal do acelerador(fox-2023)</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="quantidade">Quantidade de envio</label>
-                            <input type="text" class="form-control" id="quantsaidapecas" name="quantsaidapecas">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="quantidade">Data de envio</label>
-                            <input type="date" class="form-control" id="dataenvpecas" name="dataenvpecas">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label for="quantidade">Respnsável pelo envio</label>
-                            <input type="text" class="form-control" id="respenvpecas" name="respenvpecas">
-                        </div>
-                    </div>
 
 
 
-                    <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
 
 </html>
